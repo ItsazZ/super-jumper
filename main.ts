@@ -77,11 +77,6 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (platdeathtimer == 2) {
-        playerJumper.delete()
-    }
-})
-basic.forever(function () {
     if (playerJumper.isTouching(plat3)) {
         platdeathtimer = 0
         playerJumper.set(LedSpriteProperty.Y, plat3.get(LedSpriteProperty.Y) - 1)
@@ -94,6 +89,9 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
+    if (platdeathtimer == 2) {
+        playerJumper.delete()
+    }
     if (playerJumper.isDeleted()) {
         game.gameOver()
     }
